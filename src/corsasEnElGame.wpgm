@@ -1,7 +1,36 @@
-import wollok.game.*
-
-program corsasEnElGame {
-	// hacer las inicializaciones necesarias 
-	
-	game.start()
+class Corsa{
+	var property color
+	const velocidadMaxima=150
+	const peso=1300
+	const capacidad=4
+	method cuantoPesa(){return peso}
+	method capacidadAuto(){return capacidad}
+	method velocidadMaxima(){return velocidadMaxima}
 }
+
+class RenaultKwid{
+	var tanqueAdicional= true
+	var velocidadMaxima=150
+	var peso=1200
+	var capacidad=4
+	method cuantoPesa(){
+		if (tanqueAdicional)
+			peso+=150
+		else peso=1200
+		return peso
+	}
+	method capacidadAuto(){
+		if (not(tanqueAdicional))
+			capacidad=4
+		else capacidad=3
+		return capacidad						
+	}
+	method velocidadMaxima(){
+		if (not(tanqueAdicional))
+			velocidadMaxima=110
+		else velocidadMaxima=120
+		return velocidadMaxima
+	}
+	method color()="azul"
+	
+} 
